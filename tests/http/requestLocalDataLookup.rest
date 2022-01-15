@@ -1,0 +1,29 @@
+### Login
+POST http://127.0.0.1:8000/api/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=alex@gmail.com&password=12346
+### Test restricted page - get Account Lookup
+GET  http://127.0.0.1:8000/api/dataLookup/getChartOfAccounts
+Authorization: Bearer 32|eLUGFfD8WyhPPI7R7IAMBXeAAFavEH96CfirPXVD
+### Test restricted page - get Owners by Owner Type Id
+GET  http://127.0.0.1:8000/api/dataLookup/getOwnersByOwnerTypeId/1
+Authorization: Bearer 32|eLUGFfD8WyhPPI7R7IAMBXeAAFavEH96CfirPXVD
+### Test restricted page - Items lookup by TranstypeId
+GET  http://127.0.0.1:8000/api/dataLookup/getItemsLookupByTransTypeId/1
+Authorization: Bearer 32|eLUGFfD8WyhPPI7R7IAMBXeAAFavEH96CfirPXVD
+### Test restricted page - get Receipt Invoice Lookup
+GET  http://127.0.0.1:8000/api/dataLookup/getReceiptInvoiceLookup
+Authorization: Bearer 32|eLUGFfD8WyhPPI7R7IAMBXeAAFavEH96CfirPXVD
+### Test restricted page - get Taxes Lookup
+GET  http://127.0.0.1:8000/api/dataLookup/getTaxes
+Authorization: Bearer 32|eLUGFfD8WyhPPI7R7IAMBXeAAFavEH96CfirPXVD
+### Test restricted page - get Items Lookup
+GET  http://127.0.0.1:8000/api/dataLookup/getItems
+Authorization: Bearer 32|eLUGFfD8WyhPPI7R7IAMBXeAAFavEH96CfirPXVD
+### Test restricted page - get Groups Lookup
+GET  http://127.0.0.1:8000/api/dataLookup/getGroups
+Authorization: Bearer 32|eLUGFfD8WyhPPI7R7IAMBXeAAFavEH96CfirPXVD
+### Test restricted page - get Sub Groups Lookup
+GET  http://127.0.0.1:8000/api/dataLookup/getSubGroups
+Authorization: Bearer 32|eLUGFfD8WyhPPI7R7IAMBXeAAFavEH96CfirPXVD

@@ -1,0 +1,294 @@
+@baseUrl = http://local.testapi/api
+@token = 65|Tx3vjw3T0lStZ9H3ykLa4Uzq2ngD72vV9VugkfA1
+
+### Default
+GET  {{baseUrl}}/welcome
+
+### Registration
+POST {{baseUrl}}/register HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=arnel3&email=alex1@gmail.com&password=12346&password_confirmation=12346
+
+### Login
+POST {{baseUrl}}/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=alex@gmail.com&password=12346
+
+### Test restricted page - add product
+POST {{baseUrl}}/products HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Samsung 16&slug=324&description=test&price=500
+
+### Test restricted page - search product
+GET  {{baseUrl}}/products/search/samsung
+Authorization: Bearer {{token}}
+
+### Test logout
+POST {{baseUrl}}/logout HTTP/1.1
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+
+######################################################
+# Garry Testing API
+######################################################
+
+######################################################
+# Account Group
+######################################################
+
+### Login
+POST {{baseUrl}}/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=garryhawkins@safetechsolns.com&password=ghawkins123
+
+### Test account group index
+GET  {{baseUrl}}/accountGroup
+Authorization: Bearer {{token}}
+
+### Test account group show
+GET  {{baseUrl}}/accountGroup/10
+Authorization: Bearer {{token}}
+
+### Test account group store
+POST  {{baseUrl}}/accountGroup
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Account Group 15
+
+### Test account group update
+PUT  {{baseUrl}}/accountGroup/9
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Account Group 9
+
+### Test account group delete
+DELETE {{baseUrl}}/accountGroup/12
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+
+######################################################
+# Account Type
+######################################################
+
+### Test account type index
+GET  {{baseUrl}}/accountType
+Authorization: Bearer {{token}}
+
+### Test account type show
+GET  {{baseUrl}}/accountType/8
+Authorization: Bearer {{token}}
+
+### Test account type store
+POST  {{baseUrl}}/accountType
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+groupId=1&name=Test Account Type 15
+
+### Test account type update
+PUT  {{baseUrl}}/accountType/10
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+groupId=2&name=Test Account Type 10
+
+### Test account type delete
+DELETE {{baseUrl}}/accountType/10
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+######################################################
+# Account
+######################################################
+
+### Test account index
+GET  {{baseUrl}}/account
+Authorization: Bearer {{token}}
+
+### Test account show
+GET  {{baseUrl}}/account/52
+Authorization: Bearer {{token}}
+
+### Test account store
+POST  {{baseUrl}}/account
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Account&code=100&acctGroupId=1&acctTypeId=1&isDebit=0&showInBalanceSheet=0&showInIncomeStatement=0&showInTrialBalance=0&beginningBalance=2761577.79
+
+### Test account update
+PUT  {{baseUrl}}/account/107
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Account Update&code=100&acctGroupId=1&acctTypeId=1&isDebit=1&showInBalanceSheet=1&showInIncomeStatement=0&showInTrialBalance=1&beginningBalance=2761577.00
+
+### Test account delete
+DELETE {{baseUrl}}/account/106
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+######################################################
+# Tax
+######################################################
+
+### Test tax index
+GET  {{baseUrl}}/tax
+Authorization: Bearer {{token}}
+
+### Test tax show
+GET  {{baseUrl}}/tax/6
+Authorization: Bearer {{token}}
+
+### Test tax store
+POST  {{baseUrl}}/tax
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Tax&abbreviation=TTV&description=VAT Test&defaultRate=3&accountId=100&showInOwners=0&showInItems=0
+
+### Test tax update
+PUT  {{baseUrl}}/tax/7
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Tax Update&abbreviation=TTV&description=VAT Test&defaultRate=3&accountId=100&showInOwners=1&showInItems=0
+
+### Test tax delete
+DELETE {{baseUrl}}/tax/7
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+
+######################################################
+# Item
+######################################################
+
+### Test item index
+GET  {{baseUrl}}/item
+Authorization: Bearer {{token}}
+
+### Test item show
+GET  {{baseUrl}}/item/6
+Authorization: Bearer {{token}}
+
+### Test item store
+POST  {{baseUrl}}/item
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Item Name&description=Test Item Description&price=100&transTypeId=1&expenseAccountId=0&incomeAccountId=77&taxId=0
+
+### Test item update
+PUT  {{baseUrl}}/item/69
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+name=Test Item Name Update&description=Test Item Description&price=100&transTypeId=1&expenseAccountId=0&incomeAccountId=77&taxId=0
+
+### Test item delete
+DELETE {{baseUrl}}/item/69
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+######################################################
+# Owner
+######################################################
+
+### Test owner index
+GET  {{baseUrl}}/owner
+Authorization: Bearer {{token}}
+
+### Test owner show
+GET  {{baseUrl}}/owner/11
+Authorization: Bearer {{token}}
+
+### Test owner store
+POST  {{baseUrl}}/owner
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+email=test@email.com&firstName=Test&lastName=Test&name=Test Owner1&ownerTypeId=2&phoneNumber=0123456789&taxIdNumber=12345&wthTaxId=0&wthTaxRate=3
+
+### Test owner update
+PUT  {{baseUrl}}/owner/152
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+email=test@email.com&firstName=Test&lastName=Test&name=Test Owner Update&ownerTypeId=2&phoneNumber=0123456789&taxIdNumber=12345&wthTaxId=0&wthTaxRate=3
+
+### Test owner delete
+DELETE {{baseUrl}}/owner/69
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+######################################################
+# Owner Detail
+######################################################
+
+### Test ownerDetail index
+GET  {{baseUrl}}/ownerDetail
+Authorization: Bearer {{token}}
+
+### Test ownerDetail show
+GET  {{baseUrl}}/ownerDetail/121
+Authorization: Bearer {{token}}
+
+### Test ownerDetail store
+POST  {{baseUrl}}/ownerDetail
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+addressId=119&ownerId=152
+
+### Test ownerDetail update
+PUT  {{baseUrl}}/ownerDetail/124
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+addressId=118&ownerId=123
+
+### Test ownerDetail delete
+DELETE {{baseUrl}}/ownerDetail/124
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+######################################################
+# Address
+######################################################
+
+### Test address index
+GET  {{baseUrl}}/address
+Authorization: Bearer {{token}}
+
+### Test address show
+GET  {{baseUrl}}/address/121
+Authorization: Bearer {{token}}
+
+### Test address store
+POST  {{baseUrl}}/address
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+addressLine1=test&addressLine2=test&cityMunCode=test&contacts=test&notes=test&provinceCode=test&zipCode=test
+
+### Test address update
+PUT  {{baseUrl}}/address/122
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded
+
+addressLine1=test1&addressLine2=test1&cityMunCode=test1&contacts=test1&notes=test1&provinceCode=test1&zipCode=test1
+
+### Test address delete
+DELETE {{baseUrl}}/address/122
+Authorization: Bearer {{token}}
+Content-Type: application/x-www-form-urlencoded

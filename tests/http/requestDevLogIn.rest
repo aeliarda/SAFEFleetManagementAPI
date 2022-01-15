@@ -1,0 +1,26 @@
+
+### Default
+GET  http://accounting-be.safetechsolns.com/api/welcome
+
+### Registration
+POST http://accounting-be.safetechsolns.com/api/register HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+name=arnel3&email=alex@gmail.com&password=12346&password_confirmation=12346
+
+### Login
+POST http://accounting-be.safetechsolns.com/api/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=alex@gmail.com&password=12346
+
+### Test restricted page - add product
+POST http://accounting-be.safetechsolns.com/api/products HTTP/1.1
+Authorization: Bearer 75|09t8b00EmSmnJqIF09ZvGC4E91MXBOs76rpvvxZG
+Content-Type: application/x-www-form-urlencoded
+
+name=Samsung 16&slug=324&description=test&price=500
+
+### Test restricted page - search product
+GET  http://accounting-be.safetechsolns.com/api/products/search/samsung
+Authorization: Bearer 75|09t8b00EmSmnJqIF09ZvGC4E91MXBOs76rpvvxZG

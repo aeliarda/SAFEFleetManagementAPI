@@ -1,0 +1,66 @@
+
+### Default
+GET  http://safetechsolns.com/AW/api/welcome
+
+### Default
+GET  http://127.0.0.1:8000/api/welcome
+### Login
+POST http://accounting-be.safetechsolns.com/api/login HTTP/1.1
+Content-Type: application/x-www-form-urlencoded
+
+email=alex@gmail.com&password=12346
+
+### Test restricted page - search Trans Header
+GET  http://accounting-be.safetechsolns.com/api/common/searchTransHeader?transTypeId=1
+Authorization: Bearer 77|rbGCy8ECn6oK1CYeVXt6AMFWU8bIyOdxfdbOMHQH
+
+### Test restricted page - search Trans Header
+
+GET  http://127.0.0.1:8000/api/common/getTransHeaderById/1
+Authorization: Bearer 52|5qbAojUAurmSkhZZ713ldQ6g4yaxNEPnQ2Brkjbx
+
+### Test restricted page - search Trans Detail
+
+GET  http://127.0.0.1:8000/api/common/getTransDetailByHeaderId/1
+Authorization: Bearer 52|5qbAojUAurmSkhZZ713ldQ6g4yaxNEPnQ2Brkjbx
+
+### Test restricted page - getItemsByTransTypeId
+
+GET  http://127.0.0.1:8000/api/common/getItemsByTransTypeId/1
+Authorization: Bearer 52|5qbAojUAurmSkhZZ713ldQ6g4yaxNEPnQ2Brkjbx
+
+### Test restricted page - saveTrans
+
+POST  http://127.0.0.1:8000/api/common/saveTrans/0
+Authorization: Bearer 52|5qbAojUAurmSkhZZ713ldQ6g4yaxNEPnQ2Brkjbx
+Content-Type: application/json
+
+{
+    "action": "update",
+    "amount": 800,
+    "dueDate": "2021-12-30T16:00:00.000Z",
+    "id": 0,
+    "invoiceNumber": "101",
+    "orcrNumber": "",
+    "poNumber": "",
+    "ownerId": 11,
+    "ownerObj": {"id": 11, "code": "Mrtrs Aircon", "description": ""},
+    "transDate": "2021-02-07",
+    "transDetails": [{"action": "update",
+                        "id":0,
+                        "accountId": 58,
+                        "chartOfAccountId": 58,
+                        "genLedgerId": 0,
+                        "itemId": 3,
+                        "price": 800,
+                        "quantity": 1,
+                        "amount": 800,
+                        "taxAccountId": 73,
+                        "taxAmount": 96,
+                        "taxChartOfAccountId": 73,
+                        "taxGenLedgerId": 0,
+                        "taxId": 1,
+                        "totalAmount":0}],
+    "transTypeId": 1,
+    "userId": 0
+}
