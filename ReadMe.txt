@@ -42,6 +42,23 @@ Fix Migration error:
 
 Install laravel:
     https://www.youtube.com/watch?v=H3uRXvwXz1o
+        1. Download and install xampp:
+           1.1 https://www.apachefriends.org/download.html
+           1.2 https://dinocajic.medium.com/add-xampp-php-to-environment-variables-in-windows-10-af20a765b0ce
+        2. Install the composer
+            1.1 https://getcomposer.org/download/
+        3. Run the application:
+            1. Open command prompt and enter the following:
+                1.1 cd <project folder with the full path e.g. C:\Users\username\Documents\GitHub\SAFEAccountingAPI>
+                1.3 code .
+            2. In the VS Code 
+                2.1 Open New Terminal
+                2.2 Enter the the following:
+                    2.2.1 composer install
+                    2.2.2 php artisan serve
+            3. Open new browser and enter the url generated from the Terminal
+                3.1 Example URL is http://127.0.0.1:8000
+        
     https://www.youtube.com/watch?v=MT-GJQIY3EU
     https://www.youtube.com/watch?v=NdL-sbjIaOI
 
