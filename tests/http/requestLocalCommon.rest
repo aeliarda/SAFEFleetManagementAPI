@@ -5,7 +5,7 @@ GET  http://safetechsolns.com/AW/api/welcome
 ### Default
 GET  http://127.0.0.1:8000/api/welcome
 ### Login
-POST http://accounting-be.safetechsolns.com/api/login HTTP/1.1
+POST http://127.0.0.1:8000/api/login HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
 
 email=alex@gmail.com&password=12346
